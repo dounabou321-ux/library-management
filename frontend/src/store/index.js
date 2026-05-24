@@ -28,7 +28,10 @@ export const useAuthStore = create(
       },
 
       logout: async () => {
-        try { if (get().refresh) await authAPI.logout(get().refresh); } catch {}
+        try { if (get().refresh) await authAPI.logout(get().refresh); }
+        catch {
+          // Remote logout can fail; local token cleanup still runs below.
+        }
         localStorage.removeItem("access_token");
         localStorage.removeItem("refresh_token");
         set({ user: null, access: null, refresh: null, isAuthenticated: false });
