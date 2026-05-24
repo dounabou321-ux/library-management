@@ -11,14 +11,14 @@ from apps.users.permissions import IsAdminOrReadOnly
 
 
 class BookViewSet(viewsets.ModelViewSet):
-    serializer_class   = BookSerializer
+    serializer_class = BookSerializer
     permission_classes = [IsAdminOrReadOnly]
-    filter_backends    = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_class    = BookFilter
-    search_fields      = ["title", "author__first_name", "author__last_name",
-                          "isbn", "category__name"]
-    ordering_fields    = ["title", "publication_year", "created_at", "copies_available"]
-    ordering           = ["-created_at"]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_class = BookFilter
+    search_fields = ["title", "author__first_name", "author__last_name",
+                     "isbn", "category__name"]
+    ordering_fields = ["title", "publication_year", "created_at", "copies_available"]
+    ordering = ["-created_at"]
 
     def get_queryset(self):
         return Book.objects.select_related("author", "category").filter(is_active=True)

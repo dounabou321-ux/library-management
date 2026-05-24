@@ -17,16 +17,16 @@ class DashboardStatsView(APIView):
     permission_classes = [IsAdmin]
 
     def get(self, request):
-        today      = timezone.now().date()
+        today = timezone.now().date()
         this_month = today.replace(day=1)
-        last_7     = today - timedelta(days=6)
+        last_7 = today - timedelta(days=6)
 
         # Core stats
-        total_books      = Book.objects.filter(is_active=True).count()
-        total_users      = User.objects.filter(role="MEMBER").count()
+        total_books = Book.objects.filter(is_active=True).count()
+        total_users = User.objects.filter(role="MEMBER").count()
         active_borrowings = Borrowing.objects.filter(status="ACTIVE").count()
-        returned_books   = Borrowing.objects.filter(status="RETURNED").count()
-        overdue_count    = Borrowing.objects.filter(
+        returned_books = Borrowing.objects.filter(status="RETURNED").count()
+        overdue_count = Borrowing.objects.filter(
             status="ACTIVE", due_date__lt=today
         ).count()
         new_borrowings_today = Borrowing.objects.filter(borrowed_at=today).count()

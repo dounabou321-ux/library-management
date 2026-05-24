@@ -17,14 +17,14 @@ from .permissions import IsAdmin
 
 class RegisterView(generics.CreateAPIView):
     """POST /api/auth/register/"""
-    queryset           = User.objects.all()
-    serializer_class   = RegisterSerializer
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        user   = serializer.save()
+        user = serializer.save()
         tokens = RefreshToken.for_user(user)
         return Response({
             "user":    UserSerializer(user).data,
@@ -48,6 +48,7 @@ class LoginView(TokenObtainPairView):
 
 class LogoutView(APIView):
     """POST /api/auth/logout/"""
+
     def post(self, request):
         try:
             RefreshToken(request.data["refresh"]).blacklist()
@@ -59,6 +60,7 @@ class LogoutView(APIView):
 class ProfileView(generics.RetrieveUpdateAPIView):
     """GET/PATCH /api/auth/profile/"""
     serializer_class = UserSerializer
+
     def get_object(self):
         return self.request.user
 
@@ -76,8 +78,8 @@ class ChangePasswordView(APIView):
 class UserListView(generics.ListAPIView):
     """GET /api/auth/users/ — Admin only"""
     permission_classes = [IsAdmin]
-    serializer_class   = UserListSerializer
-    
+    serializer_class = UserListSerializer
+
     def get_queryset(self):
         return User.objects.annotate(
             borrowings_count=Count("borrowings")

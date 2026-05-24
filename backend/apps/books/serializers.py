@@ -5,13 +5,13 @@ from apps.categories.serializers import CategorySerializer
 
 
 class BookSerializer(serializers.ModelSerializer):
-    author_detail   = AuthorSerializer(source="author", read_only=True)
+    author_detail = AuthorSerializer(source="author", read_only=True)
     category_detail = CategorySerializer(source="category", read_only=True)
-    is_available    = serializers.ReadOnlyField()
+    is_available = serializers.ReadOnlyField()
     cover_image_url = serializers.SerializerMethodField()
 
     class Meta:
-        model  = Book
+        model = Book
         fields = (
             "id", "title", "author", "author_detail", "category", "category_detail",
             "isbn", "description", "publication_year", "cover_image", "cover_image_url",
@@ -29,7 +29,7 @@ class BookSerializer(serializers.ModelSerializer):
         return value or None
 
     def validate(self, attrs):
-        total     = attrs.get("copies_total", getattr(self.instance, "copies_total", 1))
+        total = attrs.get("copies_total", getattr(self.instance, "copies_total", 1))
         available = attrs.get("copies_available", getattr(self.instance, "copies_available", 1))
         if available > total:
             raise serializers.ValidationError(
