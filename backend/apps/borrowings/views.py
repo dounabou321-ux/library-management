@@ -15,10 +15,10 @@ from apps.users.permissions import IsAdmin
 class BorrowingListCreateView(generics.ListCreateAPIView):
     """GET /api/borrowings/  POST /api/borrowings/"""
     serializer_class = BorrowingSerializer
-    filter_backends  = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ["status"]
-    search_fields    = ["book__title", "user__email"]
-    ordering_fields  = ["borrowed_at", "due_date"]
+    search_fields = ["book__title", "user__email"]
+    ordering_fields = ["borrowed_at", "due_date"]
 
     def get_queryset(self):
         qs = Borrowing.objects.select_related("user", "book", "book__author", "book__category")
@@ -49,9 +49,10 @@ class BorrowingDetailView(generics.RetrieveAPIView):
 
 class ReturnBookView(APIView):
     """POST /api/borrowings/<id>/return/"""
+
     def post(self, request, pk):
         qs = Borrowing.objects.all() if request.user.is_admin \
-             else Borrowing.objects.filter(user=request.user)
+            else Borrowing.objects.filter(user=request.user)
         borrowing = get_object_or_404(qs, pk=pk)
         try:
             borrowing = return_book(borrowing)

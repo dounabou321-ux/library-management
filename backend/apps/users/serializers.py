@@ -4,16 +4,17 @@ from .models import User
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    password  = serializers.CharField(write_only=True, validators=[validate_password])
+    password = serializers.CharField(write_only=True, validators=[validate_password])
     password2 = serializers.CharField(write_only=True)
 
     class Meta:
-        model  = User
+        model = User
         fields = ("email", "first_name", "last_name", "password", "password2")
 
     def validate(self, attrs):
         if attrs["password"] != attrs.pop("password2"):
-            raise serializers.ValidationError({"password": "Les mots de passe ne correspondent pas."})
+            raise serializers.ValidationError(
+                {"password": "Les mots de passe ne correspondent pas."})
         return attrs
 
     def create(self, validated_data):
@@ -24,7 +25,7 @@ class UserSerializer(serializers.ModelSerializer):
     full_name = serializers.ReadOnlyField()
 
     class Meta:
-        model  = User
+        model = User
         fields = ("id", "email", "first_name", "last_name", "full_name", "role", "created_at")
         read_only_fields = ("id", "role", "created_at")
 
@@ -34,7 +35,7 @@ class UserListSerializer(serializers.ModelSerializer):
     borrowings_count = serializers.IntegerField(read_only=True, default=0)
 
     class Meta:
-        model  = User
+        model = User
         fields = ("id", "email", "full_name", "role", "is_active", "created_at", "borrowings_count")
 
 
