@@ -77,6 +77,7 @@ class UserListView(generics.ListAPIView):
     """GET /api/auth/users/ — Admin only"""
     permission_classes = [IsAdmin]
     serializer_class   = UserListSerializer
+    
     def get_queryset(self):
         return User.objects.annotate(
             borrowings_count=Count("borrowings")
