@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import toast from "react-hot-toast";
-import { Plus, Filter } from "lucide-react";
+import { Plus } from "lucide-react";
 import { booksAPI, categoriesAPI } from "../api/endpoints";
 import { useAuthStore } from "../store";
 import { BookCard, BookForm } from "../components/books/BookCard";
