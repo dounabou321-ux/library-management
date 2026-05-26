@@ -9,7 +9,6 @@ from .models import Borrowing
 from .serializers import BorrowingSerializer
 from .services import borrow_book, return_book
 from apps.books.models import Book
-from apps.users.permissions import IsAdmin
 
 
 class BorrowingListCreateView(generics.ListCreateAPIView):
