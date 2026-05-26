@@ -6,12 +6,13 @@ from .models import Category
 from .serializers import CategorySerializer
 from apps.users.permissions import IsAdminOrReadOnly
 
+
 class CategoryViewSet(viewsets.ModelViewSet):
-    serializer_class   = CategorySerializer
+    serializer_class = CategorySerializer
     permission_classes = [IsAdminOrReadOnly]
-    filter_backends    = [SearchFilter]
-    search_fields      = ["name"]
-    lookup_field       = "slug"
+    filter_backends = [SearchFilter]
+    search_fields = ["name"]
+    lookup_field = "slug"
 
     def get_queryset(self):
         return Category.objects.annotate(books_count=Count("books"))

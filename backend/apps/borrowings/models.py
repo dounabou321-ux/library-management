@@ -13,21 +13,21 @@ def default_due_date():
 
 class Borrowing(models.Model):
     class Status(models.TextChoices):
-        ACTIVE    = "ACTIVE",    "En cours"
-        RETURNED  = "RETURNED",  "Retourné"
-        OVERDUE   = "OVERDUE",   "En retard"
+        ACTIVE = "ACTIVE",    "En cours"
+        RETURNED = "RETURNED",  "Retourné"
+        OVERDUE = "OVERDUE",   "En retard"
 
-    user       = models.ForeignKey(User, on_delete=models.CASCADE, related_name="borrowings")
-    book       = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="borrowings")
-    status     = models.CharField(max_length=10, choices=Status.choices, default=Status.ACTIVE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="borrowings")
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="borrowings")
+    status = models.CharField(max_length=10, choices=Status.choices, default=Status.ACTIVE)
     borrowed_at = models.DateField(auto_now_add=True)
-    due_date    = models.DateField(default=default_due_date)
+    due_date = models.DateField(default=default_due_date)
     returned_at = models.DateField(null=True, blank=True)
-    notes       = models.TextField(blank=True)
+    notes = models.TextField(blank=True)
 
     class Meta:
-        db_table     = "borrowings"
-        ordering     = ["-borrowed_at"]
+        db_table = "borrowings"
+        ordering = ["-borrowed_at"]
         verbose_name = "Emprunt"
         constraints = [
             models.UniqueConstraint(

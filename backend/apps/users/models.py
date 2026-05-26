@@ -28,24 +28,24 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     class Role(models.TextChoices):
-        ADMIN  = "ADMIN",  "Administrateur"
+        ADMIN = "ADMIN",  "Administrateur"
         MEMBER = "MEMBER", "Membre"
 
-    email      = models.EmailField(unique=True)
+    email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=50)
-    last_name  = models.CharField(max_length=50)
-    role       = models.CharField(max_length=10, choices=Role.choices, default=Role.MEMBER)
-    is_active  = models.BooleanField(default=True)
-    is_staff   = models.BooleanField(default=False)
+    last_name = models.CharField(max_length=50)
+    role = models.CharField(max_length=10, choices=Role.choices, default=Role.MEMBER)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     objects = UserManager()
-    USERNAME_FIELD  = "email"
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["first_name", "last_name"]
 
     class Meta:
-        db_table     = "users"
-        ordering     = ["-created_at"]
+        db_table = "users"
+        ordering = ["-created_at"]
         verbose_name = "Utilisateur"
 
     @property
