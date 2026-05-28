@@ -15,12 +15,16 @@ class BookViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = BookFilter
-
     search_fields = [
         "title",
         "author__first_name",
         "author__last_name",
         "isbn",
+
+    ]
+    ordering_fields = [
+        "title",
+        "published_date",
         "category__name",
     ]
 
@@ -36,7 +40,11 @@ class BookViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return Book.objects.select_related(
             "author",
+
+            "category",
+
             "category"
+
         ).filter(is_active=True)
 
     def get_serializer_context(self):
