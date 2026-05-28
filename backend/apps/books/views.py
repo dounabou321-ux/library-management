@@ -20,29 +20,45 @@ class BookViewSet(viewsets.ModelViewSet):
         "author__first_name",
         "author__last_name",
         "isbn",
+
     ]
     ordering_fields = [
         "title",
         "published_date",
+        "category__name",
+    ]
+
+    ordering_fields = [
+        "title",
         "publication_year",
         "created_at",
         "copies_available",
     ]
+
     ordering = ["-created_at"]
 
     def get_queryset(self):
         return Book.objects.select_related(
             "author",
+
             "category",
+
+            "category"
+
         ).filter(is_active=True)
 
     def get_serializer_context(self):
-        return {**super().get_serializer_context(), "request": self.request}
+        return {
+            **super().get_serializer_context(),
+            "request": self.request,
+        }
 
     @action(detail=False, methods=["get"], url_path="available")
     def available(self, request):
         qs = self.get_queryset().filter(copies_available__gt=0)
+
         page = self.paginate_queryset(qs)
+
         if page is not None:
             return self.get_paginated_response(
                 self.get_serializer(
@@ -51,4 +67,7 @@ class BookViewSet(viewsets.ModelViewSet):
                     context={"request": request},
                 ).data
             )
-        return Response(self.get_serializer(qs, many=True).data)
+
+        return Response(
+            self.get_serializer(qs, many=True).data
+        )
