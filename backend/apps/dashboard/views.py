@@ -1,8 +1,3 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from django.db.models import Count
-from django.utils import timezone
-
 from datetime import timedelta
 
 from django.db.models import Count
@@ -62,9 +57,6 @@ class DashboardStatsView(APIView):
         new_borrowings_today = Borrowing.objects.filter(
             borrowed_at=today
         ).count()
-        new_borrowings_today = Borrowing.objects.filter(
-            borrowed_at=today
-        ).count()
 
         daily = []
 
@@ -101,11 +93,7 @@ class DashboardStatsView(APIView):
                 "-count"
             )[:8]
         )
-        # Recent borrowings
-        recent = Borrowing.objects.select_related(
-            "user",
-            "book",
-        ).order_by("-borrowed_at")[:5]
+
         recent = Borrowing.objects.select_related(
             "user",
             "book",
