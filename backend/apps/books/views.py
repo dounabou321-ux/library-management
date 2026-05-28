@@ -1,4 +1,4 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.filters import SearchFilter, OrderingFilter
@@ -15,13 +15,26 @@ class BookViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = BookFilter
-    search_fields = ["title", "author__first_name", "author__last_name",
-                     "isbn", "category__name"]
-    ordering_fields = ["title", "publication_year", "created_at", "copies_available"]
+    search_fields = [
+        "title",
+        "author__first_name",
+        "author__last_name",
+        "isbn",
+    ]
+    ordering_fields = [
+        "title",
+        "published_date",
+        "publication_year",
+        "created_at",
+        "copies_available",
+    ]
     ordering = ["-created_at"]
 
     def get_queryset(self):
-        return Book.objects.select_related("author", "category").filter(is_active=True)
+        return Book.objects.select_related(
+            "author",
+            "category",
+        ).filter(is_active=True)
 
     def get_serializer_context(self):
         return {**super().get_serializer_context(), "request": self.request}
@@ -32,6 +45,10 @@ class BookViewSet(viewsets.ModelViewSet):
         page = self.paginate_queryset(qs)
         if page is not None:
             return self.get_paginated_response(
-                self.get_serializer(page, many=True, context={"request": request}).data
+                self.get_serializer(
+                    page,
+                    many=True,
+                    context={"request": request},
+                ).data
             )
         return Response(self.get_serializer(qs, many=True).data)
