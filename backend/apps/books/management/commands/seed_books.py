@@ -19,7 +19,11 @@ BOOKS = [
     {
         "title": "Atomic Habits",
         "author": ("James", "Clear"),
-        "description": "Un guide pratique pour construire de bonnes habitudes et eliminer les mauvaises grace a de petits changements quotidiens.",
+        "description": (
+            "Un guide pratique pour construire de bonnes habitudes "
+            "et eliminer les mauvaises grace a de petits changements "
+            "quotidiens."
+        ),
         "category": "Developpement personnel",
         "pages": 320,
         "publication_year": 2018,
@@ -28,7 +32,10 @@ BOOKS = [
     {
         "title": "The Midnight Library",
         "author": ("Matt", "Haig"),
-        "description": "Entre la vie et la mort existe une bibliotheque infinie. Nora Seed y decouvre les vies qu'elle aurait pu vivre.",
+        "description": (
+            "Entre la vie et la mort existe une bibliotheque infinie. "
+            "Nora Seed y decouvre les vies qu'elle aurait pu vivre."
+        ),
         "category": "Fiction / Fantastique",
         "pages": 304,
         "publication_year": 2020,
@@ -37,7 +44,10 @@ BOOKS = [
     {
         "title": "Dune",
         "author": ("Frank", "Herbert"),
-        "description": "Sur la planete desertique Arrakis, Paul Atreides affronte des conflits de pouvoir, de trahison et de destinee.",
+        "description": (
+            "Sur la planete desertique Arrakis, Paul Atreides affronte des "
+            "conflits de pouvoir, de trahison et de destinee."
+        ),
         "category": "Science-fiction",
         "pages": 896,
         "publication_year": 1965,
@@ -46,7 +56,10 @@ BOOKS = [
     {
         "title": "L'Alchimiste",
         "author": ("Paulo", "Coelho"),
-        "description": "Santiago, un jeune berger andalou part a la recherche d'un tresor et decouvre sa legende personnelle.",
+        "description": (
+            "Santiago, un jeune berger andalou part a la recherche "
+            "d'un tresor et decouvre sa legende personnelle."
+        ),
         "category": "Fiction philosophique",
         "pages": 208,
         "publication_year": 1988,
@@ -55,7 +68,10 @@ BOOKS = [
     {
         "title": "Fourth Wing",
         "author": ("Rebecca", "Yarros"),
-        "description": "Violet Sorrengail integre une ecole militaire de dragons ou elle doit survivre aux epreuves, a la magie et a la guerre.",
+        "description": (
+            "Violet Sorrengail integre une ecole militaire de dragons ou elle "
+            "doit survivre aux epreuves, a la magie et a la guerre."
+        ),
         "category": "Fantasy / Romance",
         "pages": 528,
         "publication_year": 2023,
@@ -64,7 +80,10 @@ BOOKS = [
     {
         "title": "The Psychology of Money",
         "author": ("Morgan", "Housel"),
-        "description": "Un livre qui explique comment les emotions, les habitudes et le comportement influencent nos decisions financieres.",
+        "description": (
+            "Un livre qui explique comment les emotions, les habitudes et le "
+            "comportement influencent nos decisions financieres."
+        ),
         "category": "Finance / Developpement personnel",
         "pages": 256,
         "publication_year": 2020,
@@ -73,7 +92,11 @@ BOOKS = [
     {
         "title": "1984",
         "author": ("George", "Orwell"),
-        "description": "Dans une societe surveillee par Big Brother, Winston Smith cherche une verite interdite et une liberte presque impossible.",
+        "description": (
+            "Dans une societe surveillee par Big Brother, Winston "
+            "Smith cherche une verite interdite et une liberte "
+            "presque impossible."
+        ),
         "category": "Dystopie",
         "pages": 328,
         "publication_year": 1949,
@@ -82,7 +105,10 @@ BOOKS = [
     {
         "title": "To Kill a Mockingbird",
         "author": ("Harper", "Lee"),
-        "description": "Un roman sur l'enfance, la justice et le racisme dans l'Amerique du Sud, raconte a travers le regard de Scout Finch.",
+        "description": (
+            "Un roman sur l'enfance, la justice et le racisme dans l'Amerique "
+            "du Sud, raconte a travers le regard de Scout Finch."
+        ),
         "category": "Classique",
         "pages": 336,
         "publication_year": 1960,
@@ -91,7 +117,10 @@ BOOKS = [
     {
         "title": "The Hobbit",
         "author": ("J.R.R.", "Tolkien"),
-        "description": "Bilbo Baggins quitte sa vie tranquille pour accompagner des nains vers un royaume perdu garde par un dragon.",
+        "description": (
+            "Bilbo Baggins quitte sa vie tranquille pour accompagner "
+            "des nains vers un royaume perdu garde par un dragon."
+        ),
         "category": "Fantasy",
         "pages": 310,
         "publication_year": 1937,
@@ -100,7 +129,10 @@ BOOKS = [
     {
         "title": "Harry Potter and the Sorcerer's Stone",
         "author": ("J.K.", "Rowling"),
-        "description": "Harry decouvre qu'il est sorcier et entre a Poudlard, ou l'attendent amities, mysteres et dangers.",
+        "description": (
+            "Harry decouvre qu'il est sorcier et entre a Poudlard, ou "
+            "l'attendent amities, mysteres et dangers."
+        ),
         "category": "Fantasy",
         "pages": 309,
         "publication_year": 1997,
@@ -109,7 +141,11 @@ BOOKS = [
     {
         "title": "Educated",
         "author": ("Tara", "Westover"),
-        "description": "Le recit autobiographique d'une jeune femme qui quitte une enfance isolee pour acceder a l'education et se reconstruire.",
+        "description": (
+            "Le recit autobiographique d'une jeune femme qui quitte "
+            "une enfance isolee pour acceder a l'education et se "
+            "reconstruire."
+        ),
         "category": "Memoire",
         "pages": 352,
         "publication_year": 2018,
@@ -118,7 +154,10 @@ BOOKS = [
     {
         "title": "Becoming",
         "author": ("Michelle", "Obama"),
-        "description": "Michelle Obama raconte son parcours, de Chicago a la Maison-Blanche, avec sincerite et force.",
+        "description": (
+            "Michelle Obama raconte son parcours, de Chicago a la "
+            "Maison-Blanche, avec sincerite et force."
+        ),
         "category": "Biographie",
         "pages": 448,
         "publication_year": 2018,
@@ -127,7 +166,10 @@ BOOKS = [
     {
         "title": "Project Hail Mary",
         "author": ("Andy", "Weir"),
-        "description": "Un scientifique se reveille seul dans l'espace et doit sauver l'humanite en resolvant un mystere cosmique.",
+        "description": (
+            "Un scientifique se reveille seul dans l'espace et doit sauver "
+            "l'humanite en resolvant un mystere cosmique."
+        ),
         "category": "Science-fiction",
         "pages": 496,
         "publication_year": 2021,
@@ -136,7 +178,10 @@ BOOKS = [
     {
         "title": "Sapiens",
         "author": ("Yuval Noah", "Harari"),
-        "description": "Une histoire accessible de l'humanite, de l'apparition d'Homo sapiens aux revolutions qui ont transforme le monde.",
+        "description": (
+            "Une histoire accessible de l'humanite, de l'apparition d'Homo "
+            "sapiens aux revolutions qui ont transforme le monde."
+        ),
         "category": "Histoire",
         "pages": 464,
         "publication_year": 2011,
@@ -145,7 +190,10 @@ BOOKS = [
     {
         "title": "The Little Prince",
         "author": ("Antoine de", "Saint-Exupery"),
-        "description": "Un conte poetique ou un petit prince venu d'une autre planete explore l'amitie, l'amour et le sens de la vie.",
+        "description": (
+            "Un conte poetique ou un petit prince venu d'une autre planete "
+            "explore l'amitie, l'amour et le sens de la vie."
+        ),
         "category": "Conte philosophique",
         "pages": 96,
         "publication_year": 1943,
@@ -154,7 +202,10 @@ BOOKS = [
     {
         "title": "Pride and Prejudice",
         "author": ("Jane", "Austen"),
-        "description": "Elizabeth Bennet et Mr Darcy s'affrontent entre orgueil, prejuges et sentiments dans l'Angleterre du XIXe siecle.",
+        "description": (
+            "Elizabeth Bennet et Mr Darcy s'affrontent entre orgueil, "
+            "prejuges et sentiments dans l'Angleterre du XIXe siecle."
+        ),
         "category": "Classique / Romance",
         "pages": 432,
         "publication_year": 1813,
@@ -198,7 +249,8 @@ class Command(BaseCommand):
 
         self.stdout.write(
             self.style.SUCCESS(
-                f"Seed complete: {created_count} created, {updated_count} updated."
+                f"Seed complete: {created_count} created, "
+                f"{updated_count} updated."
             )
         )
 
@@ -233,8 +285,14 @@ class Command(BaseCommand):
         book.cover_image.save(filename, ContentFile(cover_bytes), save=True)
 
     def download_openlibrary_cover(self, isbn):
-        url = f"https://covers.openlibrary.org/b/isbn/{isbn}-L.jpg?default=false"
-        request = Request(url, headers={"User-Agent": "LibraryManagementSeeder/1.0"})
+        url = (
+            f"https://covers.openlibrary.org/b/isbn/{isbn}-L.jpg"
+            "?default=false"
+        )
+        request = Request(
+            url,
+            headers={"User-Agent": "LibraryManagementSeeder/1.0"},
+        )
 
         try:
             with urlopen(request, timeout=12) as response:

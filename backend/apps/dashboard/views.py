@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.db.models import Count, Q
+from django.db.models import Count
 from django.utils import timezone
 from datetime import timedelta
 
@@ -18,9 +18,6 @@ class DashboardStatsView(APIView):
 
     def get(self, request):
         today = timezone.now().date()
-        this_month = today.replace(day=1)
-        last_7 = today - timedelta(days=6)
-
         # Core stats
         total_books = Book.objects.filter(is_active=True).count()
         total_users = User.objects.filter(role="MEMBER").count()
@@ -29,7 +26,9 @@ class DashboardStatsView(APIView):
         overdue_count = Borrowing.objects.filter(
             status="ACTIVE", due_date__lt=today
         ).count()
-        new_borrowings_today = Borrowing.objects.filter(borrowed_at=today).count()
+        new_borrowings_today = Borrowing.objects.filter(
+            borrowed_at=today
+        ).count()
 
         # Daily borrowings — last 7 days
         daily = []
@@ -53,7 +52,10 @@ class DashboardStatsView(APIView):
         )
 
         # Recent borrowings
-        recent = Borrowing.objects.select_related("user", "book").order_by("-borrowed_at")[:5]
+        recent = Borrowing.objects.select_related(
+            "user",
+            "book",
+        ).order_by("-borrowed_at")[:5]
         recent_data = [
             {
                 "id": b.id,
