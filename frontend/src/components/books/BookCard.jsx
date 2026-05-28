@@ -69,6 +69,19 @@ export function BookCard({ book, onBorrow, showAdminActions, onEdit, onDelete, o
           <Tag className="w-3.5 h-3.5 shrink-0" />
           <span className="truncate">{book.category_detail?.name || "Sans categorie"}</span>
         </p>
+        <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-gray-500 dark:text-gray-400">
+          <span className="flex items-center gap-1.5 min-w-0">
+            <CalendarDays className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{book.publication_year || "Annee inconnue"}</span>
+          </span>
+          <span className="flex items-center gap-1.5 min-w-0">
+            <BookOpen className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{book.pages ? `${book.pages} pages` : "Pages inconnues"}</span>
+          </span>
+        </div>
+        <p className="mt-2 text-xs leading-5 text-gray-500 dark:text-gray-400 line-clamp-3 min-h-[3.75rem]">
+          {book.description || "Aucune description pour ce livre."}
+        </p>
 
         <div className="flex items-center justify-between gap-2 my-3">
           <span className={`badge ${book.is_available ? "badge-active" : "badge-overdue"}`}>
