@@ -275,7 +275,8 @@ class Command(BaseCommand):
 
     def ensure_cover(self, book, item):
         filename = f"{slugify(item['title'])}-{item['isbn']}.jpg"
-        if book.cover_image and book.cover_image.name.endswith(filename):
+        expected_prefix = f"books/covers/{filename.removesuffix('.jpg')}"
+        if book.cover_image and book.cover_image.name.startswith(expected_prefix):
             return
 
         cover_bytes = self.download_openlibrary_cover(item["isbn"])
