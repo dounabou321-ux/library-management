@@ -15,6 +15,7 @@ class Book(models.Model):
     isbn = models.CharField(max_length=20, unique=True, null=True,
                             blank=True, default=None)
     description = models.TextField(blank=True)
+
     published_date = models.DateField(null=True, blank=True)
     publication_year = models.PositiveIntegerField(null=True, blank=True)
     pages = models.PositiveIntegerField(null=True, blank=True)
@@ -23,6 +24,10 @@ class Book(models.Model):
         null=True,
         blank=True,
     )
+
+    publication_year = models.PositiveIntegerField(null=True, blank=True)
+    cover_image = models.ImageField(upload_to="books/covers/", null=True, blank=True)
+
     copies_total = models.PositiveIntegerField(default=1)
     copies_available = models.PositiveIntegerField(default=1)
     is_active = models.BooleanField(default=True)

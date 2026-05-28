@@ -79,6 +79,7 @@ class BookSerializer(serializers.ModelSerializer):
         return value
 
     def validate(self, attrs):
+
         total = attrs.get(
             "copies_total",
             getattr(self.instance, "copies_total", 1),
@@ -87,6 +88,10 @@ class BookSerializer(serializers.ModelSerializer):
             "copies_available",
             getattr(self.instance, "copies_available", 1),
         )
+
+        total = attrs.get("copies_total", getattr(self.instance, "copies_total", 1))
+        available = attrs.get("copies_available", getattr(self.instance, "copies_available", 1))
+
         if available > total:
             raise serializers.ValidationError(
                 {
