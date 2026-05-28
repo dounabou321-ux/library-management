@@ -21,7 +21,9 @@ def borrow_book(user, book) -> Borrowing:
 
 def return_book(borrowing: Borrowing) -> Borrowing:
     with transaction.atomic():
-        borrowing = Borrowing.objects.select_for_update().select_related("book").get(pk=borrowing.pk)
+        borrowing = Borrowing.objects.select_for_update().select_related(
+            "book"
+        ).get(pk=borrowing.pk)
         if borrowing.status == Borrowing.Status.RETURNED:
             raise ValueError("Ce livre a deja ete retourne.")
         borrowing.status = Borrowing.Status.RETURNED
