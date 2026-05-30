@@ -10,21 +10,21 @@
 
 ---
 
-##  Table des matières
+##  Table des matières :
 
-- [Fonctionnalités](#-fonctionnalités)
-- [Stack technique](#-stack-technique)
-- [Architecture](#-architecture)
-- [Installation rapide](#-installation-rapide)
+- [Fonctionnalités] (#-fonctionnalités)
+- [Stack technique] (#-stack-technique)
+- [Architecture]    (#-architecture)
+- [Installation rapide]      (#-installation-rapide)
 - [Variables d'environnement](#-variables-denvironnement)
-- [Lancement avec Docker](#-lancement-avec-docker)
-- [Développement local](#-développement-local)
-- [API Documentation](#-api-documentation)
-- [Tests](#-tests)
-- [CI/CD Pipeline](#-cicd-pipeline)
-- [Kubernetes](#-kubernetes)
-- [Git Workflow](#-git-workflow)
-- [Contributeurs](#-contributeurs)
+- [Lancement avec Docker]    (#-lancement-avec-docker)
+- [Développement local]      (#-développement-local)
+- [API Documentation]        (#-api-documentation)
+- [Tests]                    (#-tests)
+- [CI/CD Pipeline]           (#-cicd-pipeline)
+- [Kubernetes]               (#-kubernetes)
+- [Git Workflow]             (#-git-workflow)
+- [Contributeurs]            (#-contributeurs)
 
 ---
 
@@ -136,7 +136,7 @@ library-management-devops/
 
 ```bash
 # 1. Cloner le dépôt
-git clone https://github.com/YOUR_USERNAME/library-management-devops.git
+git clone https://github.com/aimad-oubella/library-management-devops.git
 cd library-management-devops
 
 # 2. Configurer les variables d'environnement
@@ -151,7 +151,7 @@ docker compose up --build
 -  Frontend : http://localhost
 -  API :      http://localhost:8000/api/
 -  Swagger :  http://localhost:8000/api/docs/
--  Admin Django : http://localhost:8000/admin/
+-   Admin Django : http://localhost:8000/admin/
 
 ---
 
@@ -390,28 +390,28 @@ git push origin main --tags
 
 ##  Screenshots
 
-| Page | Description |
-|------|-------------|
-| ![Login](#) | Page de connexion |
-| ![Dashboard](#) | Tableau de bord admin avec graphiques |
-| ![Books](#) | Catalogue de livres avec filtres |
-| ![Borrowings](#) | Gestion des emprunts |
+|      Page        |               Description             |
+|------------------|---------------------------------------|
+| ![Login](#)      | Page de connexion                     |
+| ![Dashboard](#)  | Tableau de bord admin avec graphiques |
+| ![Books](#)      | Catalogue de livres avec filtres      |
+| ![Borrowings](#) | Gestion des emprunts                  |
 
 ---
 
 ##  Contributeurs
 
-| Nom | Rôle |
-|-----|------|
-| [Dounia Boubtane] | Backend Django + DevOps |
-| [Aimad Oubella] | Frontend React + CI/CD |
+| Nom             |        Rôle             |
+|-----------------|-------------------------|
+| Dounia Boubtane | Backend Django + DevOps |
+| Aimad Oubellan  | Frontend React + CI/CD  |
 
----
+---------------------------------------------
 
 ##  Licence
 
-Ce projet est réalisé dans le cadre d'un examen DevOps du Professeur Soufiane Hamida.
+Ce projet est réalisé dans le cadre d'un examen DevOps supervisé par le Professeur Soufiane Hamida.
 
----
+---------------------------------------------------------------------------------------------------
 
 *Développé avec — Django + React + Docker + GitHub Actions*
