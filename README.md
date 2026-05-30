@@ -46,7 +46,7 @@
 - Gestion de tous les emprunts (voir, retourner)
 - Liste des membres et leurs statistiques
 
-### 🔐 Sécurité
+###  Sécurité
 - Authentification JWT (access + refresh tokens)
 - Rotation automatique des refresh tokens
 - Blacklist des tokens révoqués
