@@ -28,9 +28,9 @@
 
 ---
 
-## ✨ Fonctionnalités
+##  Fonctionnalités
 
-### 👥 Membres
+###  Membres
 - Inscription / Connexion avec JWT
 - Parcourir le catalogue de livres
 - Recherche et filtrage avancés (titre, auteur, catégorie, disponibilité)
@@ -39,14 +39,14 @@
 - Consulter ses emprunts en cours et l'historique
 - Gestion du profil
 
-### 👑 Administrateurs
+###  Administrateurs
 - Tableau de bord avec statistiques en temps réel
 - Graphiques : emprunts par jour, par catégorie, top livres
 - CRUD complet : Livres, Auteurs, Catégories
 - Gestion de tous les emprunts (voir, retourner)
 - Liste des membres et leurs statistiques
 
-### 🔐 Sécurité
+###  Sécurité
 - Authentification JWT (access + refresh tokens)
 - Rotation automatique des refresh tokens
 - Blacklist des tokens révoqués
@@ -73,7 +73,7 @@
 
 ---
 
-## 🏗 Architecture
+##  Architecture
 
 ```
 library-management-devops/
@@ -124,7 +124,7 @@ library-management-devops/
 
 ---
 
-## ⚡ Installation rapide
+##  Installation rapide
 
 ### Prérequis
 
@@ -148,10 +148,10 @@ docker compose up --build
 ```
 
 **L'application est disponible sur :**
-- 🌐 Frontend : http://localhost
-- 🔌 API :      http://localhost:8000/api/
-- 📖 Swagger :  http://localhost:8000/api/docs/
-- 🎛  Admin Django : http://localhost:8000/admin/
+-  Frontend : http://localhost
+-  API :      http://localhost:8000/api/
+-  Swagger :  http://localhost:8000/api/docs/
+-  Admin Django : http://localhost:8000/admin/
 
 ---
 
@@ -202,7 +202,7 @@ docker compose exec backend python manage.py loaddata fixtures/demo.json
 
 ---
 
-## 💻 Développement local
+##  Développement local
 
 ### Backend
 
@@ -234,7 +234,7 @@ npm run dev
 
 ---
 
-## 📖 API Documentation
+##  API Documentation
 
 | Endpoint                      | Méthode | Auth    | Description                        |
 |-------------------------------|---------|---------|-------------------------------------|
@@ -259,7 +259,7 @@ npm run dev
 
 ---
 
-## 🧪 Tests
+##  Tests
 
 ```bash
 # Dans le container
@@ -282,7 +282,7 @@ pytest --cov=apps -v
 
 ---
 
-## 🚀 CI/CD Pipeline
+##  CI/CD Pipeline
 
 Le pipeline GitHub Actions se déclenche automatiquement sur chaque `push` et `pull_request`.
 
@@ -316,7 +316,7 @@ Push / PR
 
 ---
 
-## ☸️ Kubernetes
+##  Kubernetes
 
 ```bash
 # Appliquer tous les manifests
@@ -339,7 +339,7 @@ kubectl scale deployment backend -n library-system --replicas=3
 
 ---
 
-## 🌿 Git Workflow
+##  Git Workflow
 
 ```
 main          ← Production stable, CI/CD complet
@@ -388,7 +388,7 @@ git push origin main --tags
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 | Page | Description |
 |------|-------------|
@@ -399,19 +399,19 @@ git push origin main --tags
 
 ---
 
-## 👥 Contributeurs
+##  Contributeurs
 
 | Nom | Rôle |
 |-----|------|
-| [Votre Nom] | Backend Django + DevOps |
-| [Nom Binôme] | Frontend React + CI/CD |
+| [Dounia Boubtane] | Backend Django + DevOps |
+| [Aimad Oubella] | Frontend React + CI/CD |
 
 ---
 
-## 📄 Licence
+##  Licence
 
-Ce projet est réalisé dans le cadre d'un examen DevOps.
+Ce projet est réalisé dans le cadre d'un examen DevOps du Professeur Soufiane Hamida.
 
 ---
 
-*Développé avec ❤️ — Django + React + Docker + GitHub Actions*
+*Développé avec — Django + React + Docker + GitHub Actions*
