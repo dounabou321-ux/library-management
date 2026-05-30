@@ -10,27 +10,27 @@
 
 ---
 
-##  Table des matières
+##  Table des matières :
 
-- [Fonctionnalités](#-fonctionnalités)
-- [Stack technique](#-stack-technique)
-- [Architecture](#-architecture)
-- [Installation rapide](#-installation-rapide)
+- [Fonctionnalités] (#-fonctionnalités)
+- [Stack technique] (#-stack-technique)
+- [Architecture]    (#-architecture)
+- [Installation rapide]      (#-installation-rapide)
 - [Variables d'environnement](#-variables-denvironnement)
-- [Lancement avec Docker](#-lancement-avec-docker)
-- [Développement local](#-développement-local)
-- [API Documentation](#-api-documentation)
-- [Tests](#-tests)
-- [CI/CD Pipeline](#-cicd-pipeline)
-- [Kubernetes](#-kubernetes)
-- [Git Workflow](#-git-workflow)
-- [Contributeurs](#-contributeurs)
+- [Lancement avec Docker]    (#-lancement-avec-docker)
+- [Développement local]      (#-développement-local)
+- [API Documentation]        (#-api-documentation)
+- [Tests]                    (#-tests)
+- [CI/CD Pipeline]           (#-cicd-pipeline)
+- [Kubernetes]               (#-kubernetes)
+- [Git Workflow]             (#-git-workflow)
+- [Contributeurs]            (#-contributeurs)
 
 ---
 
-## ✨ Fonctionnalités
+##  Fonctionnalités
 
-### 👥 Membres
+###  Membres
 - Inscription / Connexion avec JWT
 - Parcourir le catalogue de livres
 - Recherche et filtrage avancés (titre, auteur, catégorie, disponibilité)
@@ -39,7 +39,7 @@
 - Consulter ses emprunts en cours et l'historique
 - Gestion du profil
 
-### 👑 Administrateurs
+###  Administrateurs
 - Tableau de bord avec statistiques en temps réel
 - Graphiques : emprunts par jour, par catégorie, top livres
 - CRUD complet : Livres, Auteurs, Catégories
@@ -73,7 +73,7 @@
 
 ---
 
-## 🏗 Architecture
+##  Architecture
 
 ```
 library-management-devops/
@@ -124,7 +124,7 @@ library-management-devops/
 
 ---
 
-## ⚡ Installation rapide
+##  Installation rapide
 
 ### Prérequis
 
@@ -136,7 +136,7 @@ library-management-devops/
 
 ```bash
 # 1. Cloner le dépôt
-git clone https://github.com/YOUR_USERNAME/library-management-devops.git
+git clone https://github.com/aimad-oubella/library-management-devops.git
 cd library-management-devops
 
 # 2. Configurer les variables d'environnement
@@ -148,10 +148,10 @@ docker compose up --build
 ```
 
 **L'application est disponible sur :**
-- 🌐 Frontend : http://localhost
-- 🔌 API :      http://localhost:8000/api/
-- 📖 Swagger :  http://localhost:8000/api/docs/
-- 🎛  Admin Django : http://localhost:8000/admin/
+-  Frontend : http://localhost
+-  API :      http://localhost:8000/api/
+-  Swagger :  http://localhost:8000/api/docs/
+-   Admin Django : http://localhost:8000/admin/
 
 ---
 
@@ -202,7 +202,7 @@ docker compose exec backend python manage.py loaddata fixtures/demo.json
 
 ---
 
-## 💻 Développement local
+##  Développement local
 
 ### Backend
 
@@ -234,7 +234,7 @@ npm run dev
 
 ---
 
-## 📖 API Documentation
+##  API Documentation
 
 | Endpoint                      | Méthode | Auth    | Description                        |
 |-------------------------------|---------|---------|-------------------------------------|
@@ -259,7 +259,7 @@ npm run dev
 
 ---
 
-## 🧪 Tests
+##  Tests
 
 ```bash
 # Dans le container
@@ -282,7 +282,7 @@ pytest --cov=apps -v
 
 ---
 
-## 🚀 CI/CD Pipeline
+##  CI/CD Pipeline
 
 Le pipeline GitHub Actions se déclenche automatiquement sur chaque `push` et `pull_request`.
 
@@ -316,7 +316,7 @@ Push / PR
 
 ---
 
-## ☸️ Kubernetes
+##  Kubernetes
 
 ```bash
 # Appliquer tous les manifests
@@ -339,7 +339,7 @@ kubectl scale deployment backend -n library-system --replicas=3
 
 ---
 
-## 🌿 Git Workflow
+##  Git Workflow
 
 ```
 main          ← Production stable, CI/CD complet
@@ -388,30 +388,30 @@ git push origin main --tags
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
-| Page | Description |
-|------|-------------|
-| ![Login](#) | Page de connexion |
-| ![Dashboard](#) | Tableau de bord admin avec graphiques |
-| ![Books](#) | Catalogue de livres avec filtres |
-| ![Borrowings](#) | Gestion des emprunts |
-
----
-
-## 👥 Contributeurs
-
-| Nom | Rôle |
-|-----|------|
-| [Votre Nom] | Backend Django + DevOps |
-| [Nom Binôme] | Frontend React + CI/CD |
+|      Page        |               Description             |
+|------------------|---------------------------------------|
+| ![Login](#)      | Page de connexion                     |
+| ![Dashboard](#)  | Tableau de bord admin avec graphiques |
+| ![Books](#)      | Catalogue de livres avec filtres      |
+| ![Borrowings](#) | Gestion des emprunts                  |
 
 ---
 
-## 📄 Licence
+##  Contributeurs
 
-Ce projet est réalisé dans le cadre d'un examen DevOps.
+| Nom             |        Rôle             |
+|-----------------|-------------------------|
+| Dounia Boubtane | Backend Django + DevOps |
+| Aimad Oubellan  | Frontend React + CI/CD  |
 
----
+---------------------------------------------
 
-*Développé avec ❤️ — Django + React + Docker + GitHub Actions*
+##  Licence
+
+Ce projet est réalisé dans le cadre d'un examen DevOps supervisé par le Professeur Soufiane Hamida.
+
+---------------------------------------------------------------------------------------------------
+
+*Développé avec — Django + React + Docker + GitHub Actions*
